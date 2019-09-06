@@ -1,0 +1,49 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #131211;
+    font-family: Tahoma, Geneva, Verdana, sans-serif;
+    padding: 80px;
+}
+
+.card {
+    background-color: #242320;
+    box-sizing: border-box;
+    padding: 10px 60px;
+    margin: 0 auto;
+    border-radius: 30px;
+}
+
+.container {
+    margin: 40px 0;
+}
+
+.container h2 {
+    margin-bottom: 30px
+}
+
+h2 {
+    color: #B17D15;
+    font-size: 30px;
+    margin: 0;
+}
+
+input {
+    font-size: 24px;
+    color: black;
+    border-radius: 10px;
+    padding-left: 10px;
+    height: 34px;
+    margin-right: 14px;
+}
+
+.button {
+    height: 34px;
+    background-color: #131211;
+    border: 1px solid #B17D15;
+    border-radius: 10px;
+    color: #B17D15;
+    font-size: 16px;
+}
