@@ -3,6 +3,7 @@ amulet_data = {"Acuity": ["Clear", "Violet", "Black"], "Adamant": ["Azure", "Vio
 
 const passive_list = document.getElementById('passive-list');
 const passive_input = document.getElementById('passive-input');
+const recipe_divs = document.getElementsByClassName('oil')
 
 // populate datalist with passive values
 let option_str = '';
@@ -15,6 +16,11 @@ passive_input.addEventListener('input', () => {
     const passive = passive_input.value;
     const recipe = amulet_data[passive];
     console.log(recipe);
+    for (let i = 0; i < 3; i++) {
+        let ingredient = recipe[i];
+        let oil_text = recipe_divs[i].children[0];
+        oil_text.textContent = recipe[i];
+    }
 })
 
 
