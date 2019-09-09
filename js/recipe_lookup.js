@@ -19,8 +19,12 @@ passive_input.addEventListener('input', () => {
     for (let i = 0; i < 3; i++) {
         let ingredient = recipe[i];
         let oil_text = recipe_divs[i].children[0];
+
+        if (oil_text.textContent != '') {
+            recipe_divs[i].classList.toggle('oil-' + oil_text.textContent);
+        }
+        recipe_divs[i].classList.toggle('oil-' + ingredient.toLowerCase());
+
         oil_text.textContent = recipe[i];
     }
 })
-
-

@@ -65,11 +65,28 @@ input {
 
 .oil-text {
     font-size: 18px;
-    color: #4e4c44;
 }
 
 .plus {
     margin: 0 10px;
     color: #999999;
     align-self: center;
+}
+
+.oil-clear {
+    background-color: #242320;
+    color: #999999;
+    border: 4px solid #4e4c44;
+}
+
+.oil-violet {
+    background-color: #4f06ad;
+    color: #a277db;
+    border: 4px solid #a277db;
+}
+
+.oil-black {
+    background-color: #131211;
+    color: #999999;
+    border: 4px solid #999999;
 }
