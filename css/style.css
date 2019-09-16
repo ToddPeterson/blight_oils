@@ -94,7 +94,19 @@ input {
 .oil-verdant {
     background-color: #3dc000;
     color: #206600;
-    background: 4px solid #206600;
+    border: 4px solid #206600;
+}
+
+.oil-teal {
+    background-color: #03b1b1;
+    color: #016161;
+    border: 4px solid #016161;
+}
+
+.oil-azure {
+    background-color: #3911eb;
+    color: #c6d2ec;
+    border: 4px solid #031ca7;
 }
 
 .oil-violet {
@@ -103,8 +115,32 @@ input {
     border: 4px solid #a277db;
 }
 
+.oil-crimson {
+    background-color: #ca0707;
+    color: #f5d4d4;
+    border: 4px solid #9b0404;
+}
+
 .oil-black {
     background-color: #131211;
     color: #999999;
     border: 4px solid #999999;
+}
+
+.oil-opalescent {
+    background-color: #c708bd;
+    color: #3cb7e7;
+    border: 4px solid rgb(121, 5, 121);
+}
+
+.oil-silver {
+    background-color: #b1b1b1;
+    color: #585858;
+    border: 4px solid #e0e0e0;
+}
+
+.oil-gold {
+    background-color: rgb(255, 208, 0);
+    color: rgb(235, 145, 10);
+    border: 4px solid rgb(235, 145, 10);
 }
