@@ -13,7 +13,7 @@ xhr.onreadystatechange = () => {
             populate_datalist();
         }
     }
-}
+};
 xhr.open('GET', 'amulet_data.json');
 xhr.send();
 
@@ -26,19 +26,43 @@ function populate_datalist() {
     passive_list.innerHTML = option_str;
 }
 
-passive_input.addEventListener('input', () => {
+let active_recipe = false;
+
+function submit_recipe() {
     const passive = passive_input.value;
-    const recipe = amulet_data[passive];
-    console.log(recipe);
-    for (let i = 0; i < 3; i++) {
-        let ingredient = recipe[i];
-        let oil_text = recipe_divs[i].children[0];
-
-        if (oil_text.textContent != '') {
-            recipe_divs[i].classList.toggle('oil-' + oil_text.textContent);
+    if (passive in amulet_data) {
+        if (active_recipe) {
+            clear_recipe();
         }
-        recipe_divs[i].classList.toggle('oil-' + ingredient.toLowerCase());
-
-        oil_text.textContent = recipe[i];
+        set_recipe(passive);
+        active_recipe = true;
+    } else {
+        if (active_recipe) {
+            clear_recipe();
+            active_recipe = false;
+        }
     }
-});
+}
+
+function set_recipe(name) {
+    const recipe = amulet_data[name];
+    for (let recipe_idx = 0; recipe_idx < 3; recipe_idx++) {
+        let ingredient = recipe[recipe_idx];
+        let oil_text = recipe_divs[recipe_idx].children[0];
+        recipe_divs[recipe_idx].classList.add('oil-' + ingredient.toLowerCase());
+        oil_text.textContent = recipe[recipe_idx];
+    }
+}
+
+function clear_recipe() {
+    for (let recipe_idx = 0; recipe_idx < 3; recipe_idx++) {
+        // Remove oil class names
+        recipe_divs[recipe_idx].classList.forEach(class_name => {
+            if (class_name.startsWith('oil-')) {
+                recipe_divs[recipe_idx].classList.remove(class_name);
+            }
+        });
+        // Clear text
+        recipe_divs[recipe_idx].children[0].textContent = '';
+    }
+}
