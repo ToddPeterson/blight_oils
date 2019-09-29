@@ -1,8 +1,10 @@
 const passive_list = document.getElementById('passive-list');
 const passive_input = document.getElementById('passive-input');
 const recipe_divs = document.getElementsByClassName('oil');
+const submit_button = document.getElementById('submit-button');
 
 let amulet_data = {};
+let active_recipe = false;
 
 // Get recipe data
 const xhr = new XMLHttpRequest();
@@ -26,7 +28,12 @@ function populate_datalist() {
     passive_list.innerHTML = option_str;
 }
 
-let active_recipe = false;
+passive_input.addEventListener('keyup', event => {
+    // enter key
+    if (event.keyCode === 13) {
+        submit_button.click();
+    }
+});
 
 function submit_recipe() {
     const passive = passive_input.value;
@@ -49,7 +56,9 @@ function set_recipe(name) {
     for (let recipe_idx = 0; recipe_idx < 3; recipe_idx++) {
         let ingredient = recipe[recipe_idx];
         let oil_text = recipe_divs[recipe_idx].children[0];
-        recipe_divs[recipe_idx].classList.add('oil-' + ingredient.toLowerCase());
+        recipe_divs[recipe_idx].classList.add(
+            'oil-' + ingredient.toLowerCase()
+        );
         oil_text.textContent = recipe[recipe_idx];
     }
 }
