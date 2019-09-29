@@ -35,6 +35,10 @@ passive_input.addEventListener('keyup', event => {
     }
 });
 
+passive_input.addEventListener('focus', () => {
+    passive_input.value = '';
+})
+
 function submit_recipe() {
     const passive = passive_input.value;
     if (passive in amulet_data) {
